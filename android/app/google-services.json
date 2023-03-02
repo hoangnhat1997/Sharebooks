@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "971831141121",
+    "project_id": "sharebooks-2022",
+    "storage_bucket": "sharebooks-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971831141121:android:3604c3b369b8d41ba17100",
+        "android_client_info": {
+          "package_name": "com.sharebooks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971831141121-nno6nbabo3kirtfkfglf1pk125a2bb8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqS2WUBDMLjtLvASMNcmMuUX3kw9a_OMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971831141121-nno6nbabo3kirtfkfglf1pk125a2bb8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
