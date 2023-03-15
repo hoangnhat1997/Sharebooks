@@ -8,6 +8,10 @@ class NewsFeedItem extends StatelessWidget {
     this.itemData, {
     super.key,
   });
+  double? get screenWidth => WidgetsBinding.instance.window.physicalSize.width;
+
+  double? get screenHeight =>
+      WidgetsBinding.instance.window.physicalSize.height;
   @override
   Widget build(BuildContext context) {
     print(itemData);
@@ -45,11 +49,9 @@ class NewsFeedItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
-            child: Image.network(
-              itemData.data()['postImage'],
-            ),
+          child: ExtendedImage.network(
+            itemData.data()['postImage'],
+            fit: BoxFit.cover,
           ),
         ),
         Row(

@@ -81,6 +81,7 @@ class HomeScreen extends GetView<HomeController> {
             ),
             Expanded(
               child: ListView.builder(
+                padding: const EdgeInsets.only(top: 10.0),
                 itemCount: controller.dataDocs.length,
                 itemBuilder: (context, index) =>
                     NewsFeedItem(controller.dataDocs[index]),

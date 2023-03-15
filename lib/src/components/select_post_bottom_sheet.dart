@@ -19,11 +19,11 @@ void onSelectPostBottomSheet(context) {
         child: Column(
           children: <Widget>[
             ListTile(
-              title: Text('Your thinking... '),
+              title: const Text('Your thinking... '),
               onTap: () => Get.offNamed('/post'),
             ),
             ListTile(
-              title: Text('Share your book'),
+              title: const Text('Share your book'),
               onTap: () => Get.offNamed('/postBook'),
             ),
           ],

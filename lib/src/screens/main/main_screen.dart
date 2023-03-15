@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:sharebooks_app/src/components/components.dart';
 
 import 'package:sharebooks_app/src/controllers/controllers.dart';
@@ -36,30 +35,32 @@ class MainScreen extends GetView<MainController> {
               ),
             ),
           ),
-          child: BottomNavyBar(
-            showElevation: true,
-            selectedIndex: controller.currentIndex.value,
-            items: <BottomNavyBarItem>[
-              BottomNavyBarItem(
-                icon: const Icon(Icons.home),
-                title: const Text('Home'),
+          child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            elevation: 0.0,
+            backgroundColor: Colors.white,
+            unselectedFontSize: 12.0,
+            selectedFontSize: 12.0,
+            currentIndex: controller.currentIndex.value,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
               ),
-              BottomNavyBarItem(
-                icon: const Icon(Icons.add),
-                title: const Text('Share'),
-                activeColor: Colors.pinkAccent,
+              BottomNavigationBarItem(
+                icon: Icon(Icons.add),
+                label: 'Share',
               ),
-              BottomNavyBarItem(
-                icon: const Icon(Icons.book),
-                title: const Text('Books'),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.book),
+                label: 'Books',
               ),
-              BottomNavyBarItem(
-                icon: const Icon(Icons.person),
-                title: const Text('Profile'),
-                activeColor: Colors.black87,
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
               ),
             ],
-            onItemSelected: (index) {
+            onTap: (int index) {
               if (index == 1) {
                 onSelectPostBottomSheet(context);
                 return;

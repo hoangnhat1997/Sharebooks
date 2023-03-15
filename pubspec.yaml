@@ -46,8 +46,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   animations: ^2.0.7
-  modal_bottom_sheet: ^2.1.2
-  bottom_navy_bar: ^6.0.0
+  modal_bottom_sheet: ^3.0.0-pre
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +61,8 @@ dev_dependencies:
   # hive database generators
   hive_generator: ^2.0.0
   build_runner: ^2.3.2
+  dropdown_button2: ^2.0.0
+  flutter_share: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
