@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:extended_image/extended_image.dart';
-import 'package:sharebooks_app/src/controllers/postBook/postBook_controller.dart';
+import 'package:sharebooks_app/src/controllers/postBook/post_book_controller.dart';
 
 class PostBookScreen extends GetView<PostBookController> {
   const PostBookScreen({super.key});
@@ -52,13 +51,31 @@ class PostBookScreen extends GetView<PostBookController> {
                 child: SizedBox(
                   height: 240,
                   width: 170,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: ExtendedImage.network(
-                      'https://cdn.britannica.com/36/178136-050-7F77D46B/village-Alpine-valley-canton-Saint-Moritz-Engadin.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  child: controller.file.value != null
+                      ? ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.file(
+                            controller.file.value!,
+                            fit: BoxFit.cover,
+                          ),
+                        )
+                      : Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 1.5),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          height: 100,
+                          width: 100,
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.add,
+                              size: 30.0,
+                            ),
+                            onPressed: () {
+                              controller.selectPostBook();
+                            },
+                          ),
+                        ),
                 ),
               ),
               Container(

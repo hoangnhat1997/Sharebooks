@@ -6,4 +6,4 @@ export 'main/main_screen.dart';
 export 'profile/profile_screen.dart';
 export 'books/books_screen.dart';
 export 'post/post_screen.dart';
-export 'postBook/postBook_screen.dart';
+export 'postBook/post_book_screen.dart';

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'package:sharebooks_app/src/controllers/controllers.dart';
-import 'package:sharebooks_app/src/controllers/postBook/postBook_controller.dart';
-import 'package:sharebooks_app/src/screens/postBook/postBook_screen.dart';
 import 'package:sharebooks_app/src/screens/screens.dart';
 
 class ShareBooksApp extends StatelessWidget {
@@ -48,6 +46,7 @@ class ShareBooksApp extends StatelessWidget {
             () {
               Get.put(MainController());
               Get.put(HomeController());
+              Get.put(BooksController());
               Get.put(ProfileController());
             },
           ),
@@ -58,15 +57,6 @@ class ShareBooksApp extends StatelessWidget {
           binding: BindingsBuilder(
             () {
               Get.put(HomeController());
-            },
-          ),
-        ),
-        GetPage(
-          name: '/proflie',
-          page: () => const ProfileScreen(),
-          binding: BindingsBuilder(
-            () {
-              Get.put(ProfileController());
             },
           ),
         ),
@@ -87,7 +77,25 @@ class ShareBooksApp extends StatelessWidget {
               Get.put(PostBookController());
             },
           ),
-        )
+        ),
+        GetPage(
+          name: '/books',
+          page: () => const BooksScreen(),
+          binding: BindingsBuilder(
+            () {
+              Get.put(BooksController());
+            },
+          ),
+        ),
+        GetPage(
+          name: '/proflie',
+          page: () => const ProfileScreen(),
+          binding: BindingsBuilder(
+            () {
+              Get.put(ProfileController());
+            },
+          ),
+        ),
       ],
     );
   }

@@ -75,7 +75,7 @@ class HomeScreen extends GetView<HomeController> {
                         Get.offNamed('/post');
                       },
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
@@ -83,7 +83,7 @@ class HomeScreen extends GetView<HomeController> {
               child: ListView.builder(
                 padding: const EdgeInsets.only(top: 10.0),
                 itemCount: controller.dataDocs.length,
-                itemBuilder: (context, index) =>
+                itemBuilder: (BuildContext context, int index) =>
                     NewsFeedItem(controller.dataDocs[index]),
               ),
             )

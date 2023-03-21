@@ -10,71 +10,57 @@ class BooksScreen extends GetView<BooksController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          Container(
-            alignment: Alignment.topLeft,
-            margin: const EdgeInsets.only(top: 20, bottom: 5, left: 40.0),
-            height: 30,
-            child: Text(
-              'Books',
-              style: TextStyle(
-                fontSize: 25,
-                foreground: Paint()
-                  ..style = PaintingStyle.stroke
-                  ..strokeWidth = 3
-                  ..color = Colors.blue[700]!,
+    return Obx(
+      () => Scaffold(
+        body: Column(
+          children: <Widget>[
+            Container(
+              alignment: Alignment.topLeft,
+              margin: const EdgeInsets.only(top: 50, bottom: 10, left: 40.0),
+              height: 30,
+              child: Text(
+                'Books',
+                style: TextStyle(
+                  fontSize: 25,
+                  foreground: Paint()
+                    ..style = PaintingStyle.stroke
+                    ..strokeWidth = 3
+                    ..color = Colors.blue[700]!,
+                ),
               ),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 5.0),
-            height: 140,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                itemBuilder: (context, index) => const TypeBook()),
-          ),
-          Container(
-            alignment: Alignment.topLeft,
-            margin: const EdgeInsets.only(top: 20.0, left: 10),
-            child: const Text(
-              'Daily recommendation',
-              style: TextStyle(
-                  color: Colors.amber,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
+            Container(
+              margin: const EdgeInsets.only(top: 5.0),
+              height: 180,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: controller.dataBooksCategory.length,
+                  itemBuilder: (context, index) =>
+                      TypeBook(controller.dataBooksCategory[index])),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 20.0),
-            height: 140,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                itemBuilder: (context, index) => const BookItem()),
-          ),
-          Container(
-            alignment: Alignment.topLeft,
-            margin: const EdgeInsets.only(top: 20.0, left: 10),
-            child: const Text(
-              'Your Favourite',
-              style: TextStyle(
-                  color: Colors.blueAccent,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
+            Container(
+              alignment: Alignment.topLeft,
+              margin: const EdgeInsets.only(top: 25.0, left: 10, bottom: 10.0),
+              child: const Text(
+                'Sharing Book',
+                style: TextStyle(
+                    color: Colors.cyan,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 20.0, bottom: 10.0),
-            height: 140,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                itemBuilder: (context, index) => const BookItem()),
-          ),
-        ],
+            Expanded(
+              child: SizedBox(
+                height: 140,
+                child: ListView.builder(
+                    padding: const EdgeInsets.only(top: 5.0),
+                    itemCount: controller.dataPostBooks.length,
+                    itemBuilder: (context, index) =>
+                        BookItem(controller.dataPostBooks[index])),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

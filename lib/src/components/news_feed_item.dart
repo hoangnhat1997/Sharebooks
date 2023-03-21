@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class NewsFeedItem extends StatelessWidget {
   final QueryDocumentSnapshot<Map<String, dynamic>> itemData;
+
   const NewsFeedItem(
     this.itemData, {
     super.key,
@@ -34,14 +35,14 @@ class NewsFeedItem extends StatelessWidget {
               ),
               Container(
                 padding: const EdgeInsets.only(left: 10.0),
-                child: Text(itemData.data()['user']),
+                child: Text(itemData.data()['user'].toString()),
               )
             ],
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 10.0, top: 10.0),
-          child: Text(itemData.data()['postContent']),
+          child: Text(itemData.data()['postContent'].toString()),
         ),
         Container(
           padding: const EdgeInsets.only(top: 10.0, bottom: 5.0),
@@ -87,12 +88,12 @@ class NewsFeedItem extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                  margin:
-                      const EdgeInsets.only(left: 35.0, right: 35.0, top: 10),
-                  child: const Divider(
-                    color: Colors.black,
-                    height: 36,
-                  )),
+                margin: const EdgeInsets.only(left: 35.0, right: 35.0, top: 10),
+                child: const Divider(
+                  color: Colors.black,
+                  height: 36,
+                ),
+              ),
             ),
           ],
         )
