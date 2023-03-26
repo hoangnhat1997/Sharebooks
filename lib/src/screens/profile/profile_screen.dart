@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:sidebarx/sidebarx.dart';
 import 'package:extended_image/extended_image.dart';
 
 import 'package:sharebooks_app/src/controllers/controllers.dart';
@@ -7,8 +8,6 @@ import 'package:sharebooks_app/src/controllers/controllers.dart';
 class ProfileScreen extends GetView<ProfileController> {
   const ProfileScreen({super.key});
 
-  String? get fullname => controller.auth.currentUser!.displayName;
-  String? get email => controller.auth.currentUser!.email;
   double? get screenWidth => WidgetsBinding.instance.window.physicalSize.width;
   double? get screenHeight =>
       WidgetsBinding.instance.window.physicalSize.height;
@@ -69,10 +68,14 @@ class ProfileScreen extends GetView<ProfileController> {
                             )
                           ],
                         )
-                      : SizedBox(
-                          height: 100,
-                          width: 100,
-                          child: Image.asset('assets/images/no_avatar.png'),
+                      : Stack(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 115,
+                              width: 115,
+                              child: Image.asset('assets/images/no_avatar.png'),
+                            ),
+                          ],
                         ),
                 ),
               ],
@@ -84,7 +87,7 @@ class ProfileScreen extends GetView<ProfileController> {
                 right: 40.0,
               ),
               child: Text(
-                ' $fullname',
+                ' ${controller.auth.currentUser!.displayName}',
                 style: const TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -98,7 +101,7 @@ class ProfileScreen extends GetView<ProfileController> {
               margin: const EdgeInsets.only(
                   left: 60.0, right: 40.0, top: 5, bottom: 10.0),
               child: Text(
-                '$email',
+                '${controller.auth.currentUser!.email}',
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
@@ -191,17 +194,15 @@ class ProfileScreen extends GetView<ProfileController> {
                 ),
               ),
             ),
-            Expanded(
-              child: Container(
-                margin: const EdgeInsets.only(top: 10, left: 15, right: 15),
-                child: const Text(
-                  'You can build apps with Flutter using any text editor combined with Flutter’s command-line tools. However, we recommend using one of our editor plugins for an even better experience. These plugins provide you with code completion, syntax highlighting, widget editing assists, run & debug support, and more.',
-                  textAlign: TextAlign.justify,
-                ),
+            Container(
+              margin: const EdgeInsets.only(top: 10, left: 15, right: 15),
+              child: const Text(
+                'You can build apps with Flutter using any text editor combined with Flutter’s command-line tools. However, we recommend using one of our editor plugins for an even better experience. These plugins provide you with code completion, syntax highlighting, widget editing assists, run & debug support, and more.',
+                textAlign: TextAlign.justify,
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 60.0, right: 60.0, top: 20),
+              margin: const EdgeInsets.only(left: 60.0, right: 60.0, top: 100),
               child: ElevatedButton(
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(

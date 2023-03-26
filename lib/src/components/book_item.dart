@@ -54,7 +54,7 @@ class BookItem extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(top: 20, left: 30),
                   child: Text(
-                    "Sharing by " + itemData.data()['user'],
+                    'Sharing by ${itemData.data()['user']}',
                     style: const TextStyle(
                         fontSize: 15.0,
                         fontWeight: FontWeight.bold,

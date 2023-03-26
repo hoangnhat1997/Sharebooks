@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:extended_image/extended_image.dart';
 
+import 'package:extended_image/extended_image.dart';
 import 'package:sharebooks_app/src/controllers/controllers.dart';
 
 class PostScreen extends GetView<PostController> {

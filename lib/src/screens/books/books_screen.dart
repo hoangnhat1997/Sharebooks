@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:sharebooks_app/src/components/components.dart';
 import 'package:sharebooks_app/src/controllers/controllers.dart';
 
@@ -53,10 +54,14 @@ class BooksScreen extends GetView<BooksController> {
               child: SizedBox(
                 height: 140,
                 child: ListView.builder(
-                    padding: const EdgeInsets.only(top: 5.0),
-                    itemCount: controller.dataPostBooks.length,
-                    itemBuilder: (context, index) =>
-                        BookItem(controller.dataPostBooks[index])),
+                  padding: const EdgeInsets.only(top: 5.0),
+                  itemCount: controller.dataPostBooks.length,
+                  itemBuilder: (context, index) => GestureDetector(
+                    child: BookItem(controller.dataPostBooks[index]),
+                    onTap: () => Get.toNamed('/bookDetails',
+                        arguments: controller.dataPostBooks[index]),
+                  ),
+                ),
               ),
             ),
           ],

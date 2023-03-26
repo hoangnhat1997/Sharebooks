@@ -6,4 +6,5 @@ export 'profile/profile_controller.dart';
 export 'main/main_controller.dart';
 export 'post/post_controller.dart';
 export 'books/books_controller.dart';
+export 'bookDetails/book_details_controller.dart';
 export 'postBook/post_book_controller.dart';

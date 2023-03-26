@@ -88,6 +88,15 @@ class ShareBooksApp extends StatelessWidget {
           ),
         ),
         GetPage(
+          name: '/bookDetails',
+          page: () => BookDetailsScreen(),
+          binding: BindingsBuilder(
+            () {
+              Get.put(BookDetailsController());
+            },
+          ),
+        ),
+        GetPage(
           name: '/proflie',
           page: () => const ProfileScreen(),
           binding: BindingsBuilder(

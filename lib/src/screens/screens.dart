@@ -7,3 +7,4 @@ export 'profile/profile_screen.dart';
 export 'books/books_screen.dart';
 export 'post/post_screen.dart';
 export 'postBook/post_book_screen.dart';
+export 'bookDetails/book_details_screen.dart';

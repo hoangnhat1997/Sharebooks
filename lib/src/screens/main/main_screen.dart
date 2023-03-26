@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:sharebooks_app/src/components/components.dart';
 
+import 'package:sharebooks_app/src/components/components.dart';
 import 'package:sharebooks_app/src/controllers/controllers.dart';
 import 'package:sharebooks_app/src/screens/screens.dart';
 

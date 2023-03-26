@@ -56,7 +56,7 @@ class PostController extends GetxController {
     } catch (e) {
       await EasyLoading.showError('Failed with Error');
     } finally {
-      Get.offNamed('/home');
+      Get.offNamed('/main');
     }
   }
 }
