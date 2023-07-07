@@ -165,7 +165,7 @@ class BookDetailsScreen extends GetView<BookDetailsController> {
                         ),
                       ),
                       child: GestureDetector(
-                        onTap: () => {print('Nhat')},
+                        onTap: () => {},
                         child: Text(
                           'Receiving',
                           style: GoogleFonts.lato(

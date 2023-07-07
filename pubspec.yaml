@@ -48,6 +48,7 @@ dependencies:
   animations: ^2.0.7
   modal_bottom_sheet: ^3.0.0-pre
   sidebarx: ^0.14.0
+  flutter_stripe: ^9.0.0+1
 
 dev_dependencies:
   flutter_test:
