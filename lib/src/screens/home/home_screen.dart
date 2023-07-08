@@ -68,13 +68,11 @@ class HomeScreen extends GetView<HomeController> {
                       onTap: () => Get.offNamed('/post'),
                     ),
                   ),
-                  Container(
-                    child: IconButton(
-                      icon: const Icon(Icons.image),
-                      onPressed: () {
-                        Get.offNamed('/post');
-                      },
-                    ),
+                  IconButton(
+                    icon: const Icon(Icons.image),
+                    onPressed: () {
+                      Get.offNamed('/post');
+                    },
                   )
                 ],
               ),

@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:sidebarx/sidebarx.dart';
 import 'package:extended_image/extended_image.dart';
 
 import 'package:sharebooks_app/src/controllers/controllers.dart';
@@ -110,11 +109,11 @@ class ProfileScreen extends GetView<ProfileController> {
                 ),
               ),
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Column(
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text(
                       'Posted',
                       style: TextStyle(
@@ -136,7 +135,7 @@ class ProfileScreen extends GetView<ProfileController> {
                   ],
                 ),
                 Column(
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text(
                       'Shared',
                       style: TextStyle(
@@ -158,7 +157,7 @@ class ProfileScreen extends GetView<ProfileController> {
                   ],
                 ),
                 Column(
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text(
                       'Followed',
                       style: TextStyle(
