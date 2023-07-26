@@ -20,7 +20,9 @@ class ProfileController extends GetxController {
 
   Future selectAvatar() async {
     try {
-      final result = await FilePicker.platform.pickFiles();
+      final result = await FilePicker.platform.pickFiles(
+        type: FileType.image,
+      );
 
       if (result != null) {
         file.value = File(result.files.first.path!);

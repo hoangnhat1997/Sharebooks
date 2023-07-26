@@ -51,15 +51,22 @@ class PostScreen extends GetView<PostController> {
                   const EdgeInsets.only(left: 10.0, bottom: 20.0, top: 10.0),
               child: Row(
                 children: [
-                  SizedBox(
-                    height: 45,
-                    width: 45,
-                    child: ExtendedImage.network(
-                      controller.appController.auth.currentUser!.photoURL!,
-                      fit: BoxFit.cover,
-                      shape: BoxShape.circle,
-                    ),
-                  ),
+                  controller.appController.auth.currentUser!.photoURL != null
+                      ? SizedBox(
+                          height: 45,
+                          width: 45,
+                          child: ExtendedImage.network(
+                            controller
+                                .appController.auth.currentUser!.photoURL!,
+                            fit: BoxFit.cover,
+                            shape: BoxShape.circle,
+                          ),
+                        )
+                      : SizedBox(
+                          height: 45,
+                          width: 45,
+                          child: Image.asset('assets/images/no_avatar.png'),
+                        ),
                   Container(
                     padding: const EdgeInsets.only(left: 10.0),
                     child: Text(

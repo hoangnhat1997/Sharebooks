@@ -28,55 +28,55 @@ class ProfileScreen extends GetView<ProfileController> {
                   ),
                 ),
                 Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white, width: 3.0),
-                      borderRadius: BorderRadius.circular(60)),
-                  margin: const EdgeInsets.only(top: 100, left: 20),
-                  child: controller.avatarUrl.value != null
-                      ? Stack(
-                          children: [
-                            SizedBox(
-                              height: 115,
-                              width: 115,
-                              child: ExtendedImage.network(
-                                controller.avatarUrl.value!,
-                                fit: BoxFit.cover,
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                            Positioned(
-                              bottom: 10,
-                              left: 90,
-                              child: SizedBox(
-                                height: 22,
-                                width: 22,
-                                child: GestureDetector(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: const Icon(
-                                      Icons.camera_alt,
-                                      size: 16.0,
-                                    ),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white, width: 3.0),
+                        borderRadius: BorderRadius.circular(60)),
+                    margin: const EdgeInsets.only(top: 100, left: 20),
+                    child: Stack(
+                      children: [
+                        controller.avatarUrl.value != null
+                            ? SizedBox(
+                                height: 115,
+                                width: 115,
+                                child: ExtendedImage.network(
+                                  controller.avatarUrl.value!,
+                                  fit: BoxFit.cover,
+                                  shape: BoxShape.circle,
+                                ),
+                              )
+                            : Stack(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 115,
+                                    width: 115,
+                                    child: Image.asset(
+                                        'assets/images/no_avatar.png'),
                                   ),
-                                  onTap: () => controller.selectAvatar(),
+                                ],
+                              ),
+                        Positioned(
+                          bottom: 10,
+                          left: 90,
+                          child: SizedBox(
+                            height: 22,
+                            width: 22,
+                            child: GestureDetector(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: const Icon(
+                                  Icons.camera_alt,
+                                  size: 16.0,
                                 ),
                               ),
-                            )
-                          ],
-                        )
-                      : Stack(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 115,
-                              width: 115,
-                              child: Image.asset('assets/images/no_avatar.png'),
+                              onTap: () => controller.selectAvatar(),
                             ),
-                          ],
-                        ),
-                ),
+                          ),
+                        )
+                      ],
+                    )),
               ],
             ),
             Container(

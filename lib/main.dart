@@ -3,7 +3,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import 'package:sharebooks_app/src/app.dart';
-import 'package:sharebooks_app/.env';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

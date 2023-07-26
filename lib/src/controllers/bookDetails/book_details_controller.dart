@@ -14,24 +14,6 @@ class BookDetailsController extends GetxController {
     getPostBooks();
   }
 
-  // Future<void> onGooglePayResult(paymentResult) async {
-  //   final response = await fetchPaymentIntentClientSecret();
-  //   final clientSecret = response['clientSecret'];
-  //   final token =
-  //       paymentResult['paymentMethodData']['tokenizationData']['token'];
-  //   final tokenJson = Map.castFrom(json.decode(token));
-
-  // final params = PaymentMethodParams.cardFromToken(
-  //   token: tokenJson['id'],
-  //   paymentMethodData: Card,
-  // );
-  // // Confirm Google pay payment method
-  // await Stripe.instance.confirmPayment(
-  //   data: params,
-  //   paymentIntentClientSecret: '',
-  // );
-  //}
-
   fetchPaymentIntentClientSecret() {}
 
   void toggleFavourite() {
